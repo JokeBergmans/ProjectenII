@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService Authorization
+@model G002_project_dotnet.Models.ViewModels.SessieDetailsViewModel
+
+@{
+    ViewData["Title"] = "DetailScherm";
+}
+<body>
+
+    <div class="card mb-3">
+        <h1 class="card-header">@Model.Titel</h1>
+        <h5 class="card-header">@Model.Gastspreker</h5>
+        @if (!String.IsNullOrEmpty(Model.Beschrijving))
+        {
+            <div class="card-body">
+                <p class="beschrijving card-text">@Model.Beschrijving</p>
+            </div>
+        }
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <strong>Wanneer? </strong>@Model.Datum</li>
+            <li class="list-group-item"> <strong>Waar? </strong>@Model.Lokaal</li>
+            <li class="list-group-item">
+                <strong>Plaats?</strong> @Model.StatusString
+            </li>
+            <li class="list-group-item">IT-Lab verantwoordelijke: @Model.Verantwoordelijke.Naam</li>
+        </ul>
+        <div class="d-flex text-left btn-inschrijven p-3 ">
+
+            <a class="mr-auto btn btn-secondary" asp-controller="Sessie" asp-action="Index">Terug</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                @if ((await Authorization.AuthorizeAsync(User, "Hoofdverantwoordelijke")).Succeeded)
+
+                {
+                    @if (Model.Status == "AANGEMAAKT" && (Model.Start.TimeOfDay.TotalHours - DateTime.Now.TimeOfDay.TotalHours < 1) && (Model.Start.Date == DateTime.Now.Date))
+                    {
+                        <a class="btn btn-primary" asp-controller="Sessie" asp-action="ZetOpen" asp-route-id="@Model.Id">Sessie openzetten</a>
+                    }
+                    else if (Model.Status == "OPEN")
+                    {
+                        <a class="btn btn-primary" asp-controller="Sessie" asp-action="Sluit" asp-route-id="@Model.Id">Sessie sluiten</a>
+
+                    }
+                }
+                else if (Model.Status == "AANGEMAAKT" && Model.OpenPlaatsen > 0)
+                {
+                    <a class="btn btn-primary" asp-controller="Sessie" asp-action="SchrijfIn" asp-route-id="@Model.Id">@ViewData["schrijfStatus"]</a>
+
+                }
+            }
+        </div>
+
+    </div>
+</body>

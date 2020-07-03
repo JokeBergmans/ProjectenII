@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root prefHeight="1000.0" prefWidth="500.0" spacing="20" type="VBox" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets left="300" top="250"/>
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Academiejaar" prefWidth="100"/>
+        <Label fx:id="jaar1"/>
+        <Label fx:id="streep" text="-"/>
+        <Label fx:id="jaar2"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Startdatum" prefWidth="100" />
+        <DatePicker fx:id="startDp" />
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Einddatum" prefWidth="100"/>
+        <DatePicker fx:id="eindDp" />
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="150">
+        <Button fx:id="annuleerBtn" text="Annuleren" />
+        <Button fx:id="opslaanBtn" text="Toevoegen" />
+    </HBox>
+</fx:root>

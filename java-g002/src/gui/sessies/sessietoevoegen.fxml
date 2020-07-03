@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" spacing="40" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane.margin>
+        <Insets left="30" top="45" bottom="30" right="400"/>
+    </BorderPane.margin>
+    <HBox fx:id="content1" spacing="65">
+        <VBox spacing="10">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Titel" prefWidth="100"/>
+                <TextField fx:id="titelTextfield" prefHeight="25"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Verantwoordelijke" prefWidth="100"/>
+                <Label fx:id="verantwoordelijkeLabel" prefHeight="25"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Gastspreker" prefWidth="100" prefHeight="25"/>
+                <TextField fx:id="gastsprekerTextfield"/>
+            </HBox>
+        </VBox>
+        <VBox spacing="10">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Startdatum" prefWidth="100"/>
+                <DatePicker fx:id="startdatumDatepicker" prefWidth="110" prefHeight="25">
+                    <HBox.margin>
+                        <Insets right="94"/>
+                    </HBox.margin>
+                </DatePicker>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Start om" prefWidth="100"/>
+                <Spinner fx:id="startUur" editable="true" prefWidth="60" prefHeight="25"/>
+                <Label text=":"/>
+                <Spinner fx:id="startMin" editable="true" prefWidth="60" prefHeight="25">
+                    <HBox.margin>
+                        <Insets right="30"/>
+                    </HBox.margin>
+                </Spinner>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Einddatum" prefWidth="100"/>
+                <DatePicker fx:id="einddatumDatepicker" prefWidth="110" prefHeight="25"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Eindigt om" prefWidth="100"/>
+                <Spinner fx:id="eindUur" editable="true" prefWidth="60" prefHeight="25"/>
+                <Label text=":"/>
+                <Spinner fx:id="eindMin" editable="true" prefWidth="60" prefHeight="25"/>
+            </HBox>
+        </VBox>
+    </HBox>
+    <VBox fx:id="content2" spacing="10">
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label text="Campus" prefWidth="100"/>
+            <ComboBox fx:id="campusCombobox" prefWidth="100">
+                <HBox.margin>
+                    <Insets right="94"/>
+                </HBox.margin>
+            </ComboBox>
+            <Label text="Lokaal" prefWidth="100"/>
+            <ComboBox fx:id="lokaalCombobox" prefWidth="100"/>
+        </HBox>
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label text="Gebouw" prefWidth="100"/>
+            <ComboBox fx:id="gebouwCombobox" prefWidth="100">
+                <HBox.margin>
+                    <Insets right="94"/>
+                </HBox.margin>
+            </ComboBox>
+            <Label text="Aantal plaatsen" prefWidth="100"/>
+            <TextField fx:id="aantalPlaatsenTextfield"/>
+        </HBox>
+    </VBox>
+    <VBox spacing="10">
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label text="Automatisch herinneren" prefWidth="130"/>
+            <CheckBox fx:id="autoHerrinneringCheckbox" mnemonicParsing="false"/>
+        </HBox>
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label text="Dagen op voorhand" prefWidth="130"/>
+            <ComboBox fx:id="dagenCombobox"/>
+        </HBox>
+        <VBox spacing="10">
+            <Label text="Mededeling"/>
+            <TextArea fx:id="mededelingHerinneringTextarea"
+                      promptText="Hier komt de mededeling voor de herinnering" maxWidth="300" prefHeight="112"/>
+        </VBox>
+    </VBox>
+    <HBox spacing="122">
+        <Button fx:id="btnAnnuleren" text="Annuleren"/>
+        <Button fx:id="btnSessieToevoegen" text="Toevoegen"/>
+    </HBox>
+</fx:root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="G02"
+                      transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>domein.Gebruiker</class>
+        <class>domein.Lokaal</class>
+        <class>domein.Aankondiging</class>
+        <class>domein.Inschrijving</class>
+        <class>domein.Feedback</class>
+        <class>domein.SessieITLab</class>
+        <class>domein.SessieKalender</class>
+        <class>persistentie.LocalDateConverter</class>
+        <class>persistentie.LocalDateTimeConverter</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://51.144.156.14:1433;DatabaseName=G02"/>
+            <property name="javax.persistence.jdbc.user"
+                      value="dorothee.everaert"/>
+            <property name="javax.persistence.jdbc.driver"
+                      value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.password" value="025530_EB4f6"/>
+            <property
+                    name="javax.persistence.schema-generation.database.action"
+                    value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>

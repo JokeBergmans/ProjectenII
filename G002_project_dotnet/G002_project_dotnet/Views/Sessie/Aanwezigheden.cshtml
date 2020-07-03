@@ -1,0 +1,80 @@
+﻿@model List<InschrijvingViewModel>
+
+@{
+    ViewData["Title"] = "Aanwezigheden";
+}
+<div class="container p-2 mb-3 mt-3 mtext-dark rounded bg-light">
+    <h1 class="display-4">Aanwezigheden : @ViewData["titel"]</h1>
+</div>
+
+<div class="md-form mt-2 mb-2">
+    <input class="form-control" id="txtsearch" onkeyup="filterLijst()" type="text" placeholder="Zoek op naam">
+</div>
+
+<form method="post" asp-action="WijzigInschrijvingen">
+    <table class="table table-striped table-sm table-bordered" id="studentenlist">
+        <tr>
+            <th>Naam</th>
+            <th>Inschrijvingsdatum</th>
+            <th>Aanwezigheid</th>
+        </tr>
+
+        @if (TempData["errorInschrijvingen"] != null)
+        {
+            <div class="alert alert-warning">@TempData["errorInschrijvingen"]</div>
+        }
+
+        @{ 
+            var index = 0;
+
+            foreach (InschrijvingViewModel i in Model)
+            {
+            <tr class="student">
+                <td>@Model[index].Gebruiker.Naam</td>
+                <td>@Model[index].Datum.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="aanwezigCheck" asp-for="@Model[index].Aanwezig">
+                        @Html.HiddenFor(Model => Model[index].Id)
+                        <label class="form-check-label" for="aanwezigCheck">
+                            Aanwezig
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            index++;
+                }
+            }
+
+    </table>
+    <div class="d-flex text-left p-3 ">
+        <a class="mr-auto btn btn-secondary text-light" asp-controller="Sessie" asp-action="Index">Terug</a>
+        @{ if (TempData["error"] == null)
+            {
+                <button class="btn btn-primary" type="submit">Opslaan</button>
+            }
+        }
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function filterLijst() {
+        var input, filter;
+        input = document.getElementById('txtsearch');
+        filter = input.value.toLowerCase();
+        table = document.getElementById("studentenlist");
+        tr = table.getElementsByTagName('tr');
+
+        for (i = 0; i < tr.length; i++) {
+            if ($(tr[i]).hasClass("student")) {
+                div = tr[i].children[0];
+                if ($(div).text().toLowerCase().includes(filter)) {
+                    $(tr[i]).show()
+                } else {
+                    $(tr[i]).hide()
+                }
+            }
+        }
+    }
+</script>
+

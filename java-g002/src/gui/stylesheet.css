@@ -1,0 +1,101 @@
+.root {
+    -fx-background-color: white;
+}
+
+.tab-pane .tab-header-area .tab {
+    -fx-pref-height: 150;
+    -fx-pref-width: 50;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #b1b1b1;
+    -fx-effect: null;
+}
+
+.button {
+    -fx-background-color: #0081C5;
+    -fx-text-fill: white;
+}
+
+.list-view .button, .combo-box, .spinner .increment-arrow-button,
+.spinner .decrement-arrow-button, .scroll-bar, .date-picker .arrow-button, .check-box .box, .tool-bar {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.date-picker-popup .button {
+    -fx-background-color: none;
+}
+
+#content1, #content2 {
+    -fx-padding: 0 0 30 0;
+    -fx-border-width: 0 0 0.5 0;
+    -fx-border-color: lightgrey;
+}
+
+.tab-pane .tab-header-area .tab:selected, .combo-box .list-view .list-cell:hover, .list-view .list-cell:selected {
+    -fx-background-color: #0081C5;
+}
+
+.list-view, .text-field, .text-area, .date-picker, .spinner {
+    -fx-focus-color: #0081C5;
+}
+
+#statusBox {
+    -fx-background-color: lightgray;
+}
+
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: lightgray;
+}
+
+.tab-pane .tab-header-area .tab:selected .label {
+    -fx-text-fill: white;
+}
+
+#ingeschrevenGebruikersListview .combo-box > .list-cell {
+    -fx-background-color: lightgray;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #0081C5;
+}
+
+.default-color1.chart-bar {
+    -fx-bar-fill: #FFEE00;
+}
+
+#upButton, #downButton {
+    -fx-background-size: 16px;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-background-radius: 15;
+}
+
+#upButton {
+    -fx-background-image: url('/resources/uparrow.png');
+}
+
+#downButton {
+    -fx-background-image: url('/resources/downarrow.png');
+}
+
+#upButton:hover, #downButton:hover, #clearButton:hover {
+    -fx-background-radius: 15;
+    -fx-background-color: lightgrey;
+}
+
+#clearButton{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: darkgrey;
+    -fx-border-radius: 15;
+}
+
+
+
+
+
+
+

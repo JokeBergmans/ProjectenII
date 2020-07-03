@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using System.Globalization;
+@inject IAuthorizationService Authorization
+@model IEnumerable<GebruikerSessieViewModel>
+
+<meta charset="utf-8" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+<div class="container p-2 mb-3 mt-3 mtext-dark rounded bg-light">
+    <h1 class="display-4">Mijn sessies</h1>
+</div>
+
+@if (Model != null)
+{
+    <section class="sessie-overzicht no-padding-top">
+        @foreach (var sessie in Model)
+        {
+            <div class="sessie">
+                <div class="row bg-white has-shadow justify-content-between align-items-center">
+                    <div class="left-col col-4 d-flex flex-column">
+                        <h3 class="h4">@sessie.Titel</h3>
+                        <medium>@sessie.Gastspreker</medium>
+                    </div>
+                    <div class="col-4 d-flex flex-column">
+                        <span class="datum">@sessie.Datum</span>
+                        <span class="locatie">@sessie.Lokaal</span>
+                    </div>
+                    <div class="right-col col-4 d-flex align-items-center justify-content-between">
+
+                        @if ((await Authorization.AuthorizeAsync(User, "Gebruiker")).Succeeded)
+                        {
+                            @if ((await Authorization.AuthorizeAsync(User, "Verantwoordelijke")).Succeeded)
+                            {
+                                <a class="btn btn-secondary m-1 ml-auto" asp-controller="Sessie" asp-action="BekijkFeedback" asp-route-id="@sessie.Id">Bekijk feedback</a>
+                            }
+                            else
+                            {
+                                if (sessie.Aanwezig)
+                                {
+                                    <span><strong>Aanwezig</strong></span>
+                                    <a class="btn btn-secondary m-1" asp-controller="Sessie" asp-action="SchrijfFeedback" asp-route-id="@sessie.Id">Schrijf feedback</a>
+
+                                }
+                                else
+                                {
+                                    <span><strong>Afwezig</strong></span>
+
+                                }
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        }
+    </section>
+}

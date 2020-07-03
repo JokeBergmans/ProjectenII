@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="G002_project_dotnet.Models.Domain.Aankondiging">
+    <Position X="11" Y="3" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAQGAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Aankondiging.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Publicist" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SessieAankondiging" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.Feedback">
+    <Position X="6.25" Y="12.25" Width="2.75" />
+    <AssociationLine Name="Auteur" Type="G002_project_dotnet.Models.Domain.Gebruiker" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.188" Y="12.25" />
+        <Point X="8.188" Y="10.807" />
+        <Point X="10.25" Y="10.807" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAAAAAAAAAAAAAAAACAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Feedback.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Auteur" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.Gebruiker">
+    <Position X="10.25" Y="8.25" Width="2.75" />
+    <AssociationLine Name="Feedback" Type="G002_project_dotnet.Models.Domain.Feedback" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="11.375" />
+        <Point X="8.438" Y="11.375" />
+        <Point X="8.438" Y="12.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Sessies" Type="G002_project_dotnet.Models.Domain.Sessie" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="9.938" />
+        <Point X="15.75" Y="9.938" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Type" Type="G002_project_dotnet.Models.Domain.GebruikerType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.938" Y="8.25" />
+        <Point X="10.938" Y="6.619" />
+        <Point X="10.5" Y="6.619" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAQAEACAAAAAAAAADBAAACgAAAAAAAQAJAAAAgEA=</HashCode>
+      <FileName>Models\Domain\Gebruiker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Aankondigingen" />
+      <Property Name="Inschrijvingen" />
+      <Property Name="Feedback" />
+      <Property Name="Sessies" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.Inschrijving">
+    <Position X="10.75" Y="14.25" Width="3.25" />
+    <AssociationLine Name="Sessie" Type="G002_project_dotnet.Models.Domain.Sessie" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="14.375" />
+        <Point X="16.094" Y="14.375" />
+        <Point X="16.094" Y="12.44" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAACAQAEAAAAAAAAAAAAIABACAACAAAAAAAgQAAAQAA=</HashCode>
+      <FileName>Models\Domain\Inschrijving.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gebruiker" />
+      <Property Name="Sessie" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SessieInschrijvingen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.Lokaal">
+    <Position X="22.25" Y="5" Width="3.25" />
+    <AssociationLine Name="Sessies" Type="G002_project_dotnet.Models.Domain.Sessie" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.25" Y="6.409" />
+        <Point X="21.875" Y="6.409" />
+        <Point X="21.875" Y="9.138" />
+        <Point X="19.25" Y="9.138" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAIACAAAAAAAAAABAAAAAAAIEAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Lokaal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Sessies" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.Sessie">
+    <Position X="15.75" Y="8" Width="3.5" />
+    <AssociationLine Name="Inschrijvingen" Type="G002_project_dotnet.Models.Domain.Inschrijving" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="12.44" />
+        <Point X="16.5" Y="14.812" />
+        <Point X="14" Y="14.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SessieAankondiging" Type="G002_project_dotnet.Models.Domain.SessieAankondiging">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.16" Y="0.677" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SessieInschrijving" Type="G002_project_dotnet.Models.Domain.SessieInschrijving">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-3.299" Y="0.3" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SessieMedia" Type="G002_project_dotnet.Models.Domain.SessieMedia" FixedToPoint="true">
+      <Path>
+        <Point X="19.25" Y="11.014" />
+        <Point X="21" Y="11.014" />
+        <Point X="21" Y="11.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Lokaal" Type="G002_project_dotnet.Models.Domain.Lokaal" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.25" Y="8.672" />
+        <Point X="21.498" Y="8.672" />
+        <Point X="21.498" Y="6" />
+        <Point X="22.25" Y="6" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACDAAEACAKgCAAgkAAAEAAAAAGAEAAAAARCAEQgAA=</HashCode>
+      <FileName>Models\Domain\Sessie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Verantwoordelijke" />
+      <Property Name="Status" />
+      <Property Name="Lokaal" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Inschrijvingen" />
+      <Property Name="SessieAankondiging" />
+      <Property Name="SessieInschrijving" />
+      <Property Name="SessieMedia" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.SessieAankondiging">
+    <Position X="16.25" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQABACAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\Domain\SessieAankondiging.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sessie" />
+      <Property Name="Aankondiging" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.SessieInschrijving">
+    <Position X="17" Y="15.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAkAABACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\SessieInschrijving.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Inschrijving" />
+      <Property Name="Sessie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.SessieKalender">
+    <Position X="22.25" Y="15" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIACAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\SessieKalender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="G002_project_dotnet.Models.Domain.SessieMedia">
+    <Position X="20.5" Y="11.75" Width="2.5" />
+    <AssociationLine Name="Sessie" Type="G002_project_dotnet.Models.Domain.Sessie" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.5" Y="11.75" />
+        <Point X="21.5" Y="10.688" />
+        <Point X="19.25" Y="10.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Domain\SessieMedia.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sessie" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="G002_project_dotnet.Models.Domain.GebruikerAanwezigheidStatus">
+    <Position X="6.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Domain\GebruikerAanwezigheidStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="G002_project_dotnet.Models.Domain.GebruikerStatus">
+    <Position X="6.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\GebruikerStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="G002_project_dotnet.Models.Domain.GebruikerType">
+    <Position X="9" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAgA=</HashCode>
+      <FileName>Models\Domain\GebruikerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="G002_project_dotnet.Models.Domain.SessieType">
+    <Position X="22.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAEAAAAAAAAAAAQAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Domain\SessieType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

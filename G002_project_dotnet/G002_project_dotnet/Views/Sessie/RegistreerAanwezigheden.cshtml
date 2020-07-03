@@ -1,0 +1,15 @@
+﻿@model RegistreerAanwezigheidViewModel
+@{
+    ViewData["Title"] = "Registreer aanwezigheid";
+}
+
+<div class="container p-2 mb-3 mt-3 mtext-dark rounded bg-light">
+    <h1 class="display-4">Aanwezigheid registreren voor @ViewData["titel"]</h1>
+</div>
+<form method="post" asp-controller="Sessie" asp-action="RegistreerAanwezigheid">
+    <div class="form-group">
+        <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Geef email" asp-for="@Model.Email">
+        @Html.HiddenFor(Model => Model.SessieID)
+    </div>
+    <button type="submit" class="btn btn-primary">Registreer</button>
+</form>

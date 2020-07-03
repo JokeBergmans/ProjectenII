@@ -1,0 +1,21 @@
+﻿@model FeedbackViewModel
+
+@{
+    ViewData["Title"] = "Feedback";
+}
+
+<div class="container p-2 mb-3 mt-3 mtext-dark rounded bg-light">
+    <h1 class="display-4">Feedback voor @ViewData["titel"]</h1>
+</div>
+
+@{foreach(String tekst in Model.Feedback)
+    {
+        
+    <div class="card mt-3">
+        <div class="card-body">
+            <p class="card-text">@tekst</p>
+        </div>
+    </div>
+    }
+}
+

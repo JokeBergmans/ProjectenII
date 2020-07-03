@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root type="ListCell" xmlns="http://javafx.com/fxml"
+        xmlns:fx="http://javafx.com/fxml/1">
+    <graphic>
+        <VBox>
+            <HBox alignment="TOP_CENTER">
+                <Label fx:id="lblNaam" text="Naam"/>
+            </HBox>
+            <HBox spacing="30">
+                <VBox fx:id="vboxGebruiker" spacing="20">
+                    <padding>
+                        <Insets bottom="20.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets top="10.0"/>
+                    </HBox.margin>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Gebruikersnaam:" prefWidth="100"/>
+                        <Label fx:id="lblGebruikersnaam" text="Gebruikersnaam" prefWidth="130"/>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Type:" prefWidth="100"/>
+                        <Label fx:id="lblType" text="Type"  prefWidth="130"/>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Status:" prefWidth="100"/>
+                        <Label fx:id="lblStatus" text="Status"  prefWidth="130"/>
+                    </HBox>
+                </VBox>
+                <ImageView fx:id="imvGebruiker" fitHeight="100.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <HBox.margin>
+                        <Insets top="10.0"/>
+                    </HBox.margin>
+                </ImageView>
+            </HBox>
+        </VBox>
+    </graphic>
+</fx:root>

@@ -1,0 +1,7 @@
+package domein;
+
+public enum LokaalType {
+
+    AUDITORIUM, LESLOKAAL, PCLOKAAL, LAPTOPLOKAAL, HYBRIDE, TAALLAB, VERGADERZAAL
+
+}

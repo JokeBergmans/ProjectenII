@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root type="ListCell" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <graphic>
+        <VBox>
+            <HBox fx:id="titelHbox">
+                <Label fx:id="titelLabel">
+                    <HBox.margin>
+                        <Insets bottom="10.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <VBox fx:id="contentVbox">
+                <padding>
+                    <Insets top="2.0"/>
+                </padding>
+                <HBox>
+                    <Label text="Verantwoordelijke: "/>
+                    <Label fx:id="verantwoordelijkeLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="Start: "/>
+                    <Label fx:id="startDatumLabel"/>
+                    <Label text=" - "/>
+                    <Label fx:id="startUurLabel"/>
+                </HBox>
+                <HBox>
+                    <Label text="Einde: "/>
+                    <Label fx:id="eindDatumLabel"/>
+                    <Label text=" - "/>
+                    <Label fx:id="eindUurLabel"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </graphic>
+</fx:root>

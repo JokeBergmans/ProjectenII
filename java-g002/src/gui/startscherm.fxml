@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import java.net.URL?>
+<fx:root prefHeight="500.0"
+         prefWidth="700.0" rotateGraphic="true" side="LEFT" tabClosingPolicy="UNAVAILABLE"
+         type="TabPane" xmlns="http://javafx.com/fxml"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@stylesheet.css"/>
+    </stylesheets>
+    <Tab fx:id="sessieBeherenTab" closable="false">
+        <graphic>
+            <Group>
+                <Label rotate="90" text="Sessies Beheren"/>
+            </Group>
+        </graphic>
+    </Tab>
+    <Tab fx:id="sessieKalenderTab" closable="false">
+        <graphic>
+            <Group>
+                <Label rotate="90" text="Sessie Kalenders"/>
+            </Group>
+        </graphic>
+    </Tab>
+    <Tab fx:id="statistiekTab" closable="false">
+        <graphic>
+            <Group>
+                <Label rotate="90" text="Statistieken"/>
+            </Group>
+        </graphic>
+    </Tab>
+    <Tab fx:id="gebruikersTab" closable="false">
+        <graphic>
+            <Group>
+                <Label rotate="90" text="Gebruikers Beheren"/>
+            </Group>
+        </graphic>
+    </Tab>
+</fx:root>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="1000.0" prefWidth="1200.0" type="BorderPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Label alignment="CENTER" prefHeight="52.0" prefWidth="309.0" text="Statistieken" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+    </top>
+    <left>
+        <VBox fx:id="listViewBox" prefHeight="1000" spacing="10">
+            <BorderPane.margin>
+                <Insets left="30" top="30" />
+            </BorderPane.margin>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Toon statistieken voor" />
+                <ComboBox fx:id="keuzeBox" />
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" spacing="10"  BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets left="150.0" right="50.0" />
+            </BorderPane.margin>
+            <VBox fx:id="snapshotNode">
+                <Label fx:id="aanwezigLbl" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0"
+                        text="Aantal aanwezigen:" visible="false">
+                </Label>
+                <Label fx:id="afwezigLbl" prefHeight="27.0"  text="Aantal afwezigen: " visible="false">
+
+                </Label>
+                <StackedBarChart fx:id="barChart" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0"
+                                 prefWidth="300.0" visible="false">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </StackedBarChart>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT">
+                <Button fx:id="saveBtn" mnemonicParsing="false" prefHeight="25.0"  text="Opslaan"/>
+            </HBox>
+        </VBox>
+    </center>
+    <right>
+        <Region prefWidth="300"/>
+    </right>
+</fx:root>

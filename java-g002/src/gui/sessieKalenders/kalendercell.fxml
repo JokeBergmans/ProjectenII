@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml">
+    <graphic>
+
+        <HBox fx:id="hBox">
+            <Label fx:id="academiejaarLb">
+                <HBox.margin>
+                    <Insets bottom="10.0"/>
+                </HBox.margin>
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </graphic>
+    <stylesheets>
+        <URL value="@../stylesheet.css"/>
+    </stylesheets>
+</fx:root>

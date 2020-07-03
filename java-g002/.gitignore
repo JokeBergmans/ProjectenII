@@ -1,0 +1,12 @@
+/.idea/
+/out/
+*.iml
+/bin/
+/vpproject/
+.classpath
+.project
+src/module-info.java
+*.jar
+/lib/
+*.vpdm/*
+*.vpd
